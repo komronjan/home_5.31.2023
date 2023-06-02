@@ -6,5 +6,4 @@ public class TodoApp
     public string? TodoName { get; set; }
     public Status Status { get; set; }
     public string StatusName { get { return Status.ToString(); } }
-
 }

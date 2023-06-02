@@ -1,6 +1,8 @@
 using Infrastructurre.Services;
 using Infrastructurre.Context;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IFileService,FileService>();
+builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddSingleton<TodoAppService>();
 builder.Services.AddSingleton<DapperContext>();
 // Add services to the container.
@@ -18,6 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
